@@ -26,27 +26,29 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <a href="" class="btn btn-success btn-sm me-2"><i class="fa fa-edit"></i></a>
-                                    <form action="" method="POST" class="d-inline">
-                                        <input type="hidden" name="_method" value="DELETE" />
-                                        <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                                        <button class="btn btn-danger btn-sm" type="submit"><i
-                                                class="fa fa-trash"></i></button>
-                                    </form>
-                                </div>
-                            </td>
-                        </tr>
+                        @foreach ($barangs as $barang)
+                            <tr>
+                                <td>{{ $barang->kode_barang }}</td>
+                                <td>{{ $barang->nama_barang }}</td>
+                                <td>{{ $barang->unit }}</td>
+                                <td>{{ $barang->ukuran }}</td>
+                                <td>{{ $barang->warna }}</td>
+                                <td>{{ $barang->jenis }}</td>
+                                <td>{{ $barang->harga_satuan }}</td>
+                                <td>{{ $barang->stok }}</td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <a href="" class="btn btn-success btn-sm me-2"><i class="fa fa-edit"></i></a>
+                                        <form action="" method="POST" class="d-inline">
+                                            <input type="hidden" name="_method" value="DELETE" />
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                                            <button class="btn btn-danger btn-sm" type="submit"><i
+                                                    class="fa fa-trash"></i></button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
