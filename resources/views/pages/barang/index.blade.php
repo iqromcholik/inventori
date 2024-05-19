@@ -6,7 +6,7 @@
 
 @section('content')
     <div class="container-fluid pt-4 px-4">
-        <a href="" class="btn btn-primary mb-3"><i class="fa fa-plus me-2"></i>Tambah
+        <a href="{{ route('barang.create') }}" class="btn btn-primary mb-3"><i class="fa fa-plus me-2"></i>Tambah
             Barang</a>
         <div class="bg-light rounded h-100 p-4">
             <h6 class="mb-4">List Barang</h6>

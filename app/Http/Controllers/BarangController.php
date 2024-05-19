@@ -10,4 +10,9 @@ class BarangController extends Controller
     {
         return view('pages.barang.index');
     }
+
+    public function create()
+    {
+        return view('pages.barang.create');
+    }
 }
