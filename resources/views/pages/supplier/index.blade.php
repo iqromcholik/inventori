@@ -6,7 +6,8 @@
 
 @section('content')
     <div class="container-fluid pt-4 px-4">
-        <a href="" class="btn btn-primary mb-3"><i class="fa fa-plus me-2"></i>Tambah Supplier</a>
+        <a href="{{ route('supplier.create') }}" class="btn btn-primary mb-3"><i class="fa fa-plus me-2"></i>Tambah
+            Supplier</a>
         <div class="bg-light rounded h-100 p-4">
             <h6 class="mb-4">List Supplier</h6>
             <div class="table-responsive">
@@ -21,24 +22,25 @@
                         </tr>
                     </thead>
                     <tbody>
-
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <a href="" class="btn btn-success btn-sm me-2"><i class="fa fa-edit"></i></a>
-                                    <form action="" method="POST" class="d-inline">
-                                        <input type="hidden" name="_method" value="DELETE" />
-                                        <input type="hidden" name="_token" value="{{ csrf_token() }}" />
-                                        <button class="btn btn-danger btn-sm" type="submit"><i
-                                                class="fa fa-trash"></i></button>
-                                    </form>
-                                </div>
-                            </td>
-                        </tr>
+                        @foreach ($suppliers as $supplier)
+                            <tr>
+                                <td>{{ $supplier->kode_supplier }}</td>
+                                <td>{{ $supplier->nama_supplier }}</td>
+                                <td>{{ $supplier->telpon }}</td>
+                                <td>{{ $supplier->alamat }}</td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <a href="" class="btn btn-success btn-sm me-2"><i class="fa fa-edit"></i></a>
+                                        <form action="" method="POST" class="d-inline">
+                                            <input type="hidden" name="_method" value="DELETE" />
+                                            <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                                            <button class="btn btn-danger btn-sm" type="submit"><i
+                                                    class="fa fa-trash"></i></button>
+                                        </form>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
