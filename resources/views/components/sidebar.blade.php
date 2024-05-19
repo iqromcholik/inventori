@@ -8,7 +8,10 @@
             <span class="nav-item mx-4 mt-3">Menu Pengguna</span>
             <a href="/menu/list-user" class="nav-item nav-link {{ Request::is('menu/list-user*') ? 'active' : '' }}"><i
                     class="fa-solid fa-users"></i>List User</a>
-            <a href="/menu/data-user" class="nav-item nav-link"><i class="fa-solid fa-truck-fast"></i>List Supplier</a>
+            <a href="/menu/list-supplier"
+                class="nav-item nav-link {{ Request::is('menu/list-supplier*') ? 'active' : '' }}"><i
+                    class="fa-solid fa-truck-fast"></i>List
+                Supplier</a>
 
             <span class="nav-item mx-4 mt-3">Menu Barang</span>
             <a href="/menu/data-user" class="nav-item nav-link"><i class="fa-solid fa-box"></i>List Barang</a>
