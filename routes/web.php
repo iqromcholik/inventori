@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BarangController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Auth\User;
@@ -25,4 +26,11 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/menu/list-supplier/create', [SupplierController::class, 'create'])->name('create');
         Route::post('/menu/list-supplier/store', [SupplierController::class, 'store'])->name('store');
     });
+
+    Route::controller(BarangController::class)->name('barang.')->group(function () {
+        Route::get('/menu/list-barang', [BarangController::class, 'index'])->name('index');
+        Route::get('/menu/list-barang/create', [BarangController::class, 'create'])->name('create');
+        Route::post('/menu/list-barang/store', [BarangController::class, 'store'])->name('store');
+    });
+
 });
