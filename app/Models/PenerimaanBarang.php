@@ -9,6 +9,8 @@ class PenerimaanBarang extends Model
 {
     use HasFactory;
 
+    protected $table = 'penerimaan_barangs'; // Menentukan nama tabel secara eksplisit
+
     protected $fillable =
     [
         'tgl_penyimpanan',
