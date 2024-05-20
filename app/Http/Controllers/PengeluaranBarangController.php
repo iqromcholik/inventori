@@ -12,4 +12,9 @@ class PengeluaranBarangController extends Controller
         $pengeluarans = PengeluaranBarang::all()->sortByDesc('created_at');
         return view('pages.pengeluaran.index', compact('pengeluarans'));
     }
+
+    public function create()
+    {
+        return view('pages.pengeluaran.create');
+    }
 }

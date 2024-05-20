@@ -4,6 +4,7 @@ use App\Http\Controllers\BarangController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PenerimaanBarang;
 use App\Http\Controllers\PenerimaanBarangController;
+use App\Http\Controllers\PengeluaranBarangController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\UserController;
 use App\Models\PenerimaanBarang as ModelsPenerimaanBarang;
@@ -43,10 +44,10 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/menu/penerimaan-barang/store', [PenerimaanBarangController::class, 'store'])->name('store');
     });
 
-    Route::controller(PenerimaanBarangController::class)->name('pengeluaran.')->group(function () {
-        Route::get('/menu/penerimaan-barang', [PenerimaanBarangController::class, 'index'])->name('index');
-        Route::get('/menu/penerimaan-barang/create', [PenerimaanBarangController::class, 'create'])->name('create');
-        Route::post('/menu/penerimaan-barang/store', [PenerimaanBarangController::class, 'store'])->name('store');
+    Route::controller(PengeluaranBarangController::class)->name('pengeluaran.')->group(function () {
+        Route::get('/menu/pengeluaran-barang', [PengeluaranBarangController::class, 'index'])->name('index');
+        Route::get('/menu/pengeluaran-barang/create', [PengeluaranBarangController::class, 'create'])->name('create');
+        Route::post('/menu/pengeluaran-barang/store', [PengeluaranBarangController::class, 'store'])->name('store');
     });
 
 });
