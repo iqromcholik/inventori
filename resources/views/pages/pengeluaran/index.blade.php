@@ -36,8 +36,10 @@
                                 <td>{{ $pengeluaran->barang->stok }}</td>
                                 <td>
                                     <div class="d-flex align-items-center">
-                                        <a href="" class="btn btn-success btn-sm me-2"><i class="fa fa-edit"></i></a>
-                                        <form action="" method="POST" class="d-inline">
+                                        <a href="{{ route('pengeluaran.edit', $pengeluaran->id_pengeluaran) }}"
+                                            class="btn btn-success btn-sm me-2"><i class="fa fa-edit"></i></a>
+                                        <form action="{{ route('pengeluaran.destroy', $pengeluaran->id_pengeluaran) }}"
+                                            method="POST" class="d-inline">
                                             <input type="hidden" name="_method" value="DELETE" />
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                                             <button class="btn btn-danger btn-sm" type="submit"><i

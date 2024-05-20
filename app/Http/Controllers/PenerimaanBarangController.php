@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PenerimaanRequest;
+use App\Http\Requests\UpdatePenerimaanRequest;
 use App\Models\Barang;
 use App\Models\PenerimaanBarang;
 use Illuminate\Http\Request;
@@ -35,6 +36,25 @@ class PenerimaanBarangController extends Controller
         }
 
         $penerimaanBarang->create($data);
+        return redirect(route('penerimaan.index'));
+    }
+
+    public function edit(PenerimaanBarang $penerimaanBarang)
+    {
+        $kodeBarangs = Barang::all();
+        return view('pages.penerimaan.edit', compact('penerimaanBarang', 'kodeBarangs'));
+    }
+
+    public function update(PenerimaanBarang $penerimaanBarang, UpdatePenerimaanRequest $updatePenerimaanRequest)
+    {
+        $data = $updatePenerimaanRequest->validated();
+        $penerimaanBarang->update($data);
+        return redirect(route('penerimaan.index'));
+    }
+
+    public function destroy(PenerimaanBarang $penerimaanBarang)
+    {
+        $penerimaanBarang->delete();
         return redirect(route('penerimaan.index'));
     }
 }

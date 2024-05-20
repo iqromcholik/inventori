@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\PengeluaranRequest;
+use App\Http\Requests\UpdatePengeluaranRequest;
 use App\Models\Barang;
 use App\Models\PengeluaranBarang;
 use Illuminate\Http\Request;
@@ -35,6 +36,25 @@ class PengeluaranBarangController extends Controller
         }
 
         $pengeluaranBarang->create($data);
+        return redirect(route('pengeluaran.index'));
+    }
+
+    public function edit(PengeluaranBarang $pengeluaranBarang)
+    {
+        $kodeBarangs = Barang::all();
+        return view('pages.pengeluaran.edit', compact('pengeluaranBarang', 'kodeBarangs'));
+    }
+
+    public function update(PengeluaranBarang $pengeluaranBarang, UpdatePengeluaranRequest $updatePengeluaranRequest)
+    {
+        $data = $updatePengeluaranRequest->validated();
+        $pengeluaranBarang->update($data);
+        return redirect(route('pengeluaran.index'));
+    }
+
+    public function destroy(PengeluaranBarang $pengeluaranBarang)
+    {
+        $pengeluaranBarang->delete();
         return redirect(route('pengeluaran.index'));
     }
 }

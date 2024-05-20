@@ -10,7 +10,7 @@ class PenerimaanBarang extends Model
     use HasFactory;
 
     protected $table = 'penerimaan_barangs'; // Menentukan nama tabel secara eksplisit
-    protected $primaryKey = 'kode_barang'; // Menentukan primary key secara eksplisit
+    protected $primaryKey = 'id_penerimaan'; // Menentukan primary key secara eksplisit
 
     protected $fillable =
     [

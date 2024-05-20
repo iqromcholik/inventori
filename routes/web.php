@@ -57,12 +57,20 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/menu/penerimaan-barang', [PenerimaanBarangController::class, 'index'])->name('index');
         Route::get('/menu/penerimaan-barang/create', [PenerimaanBarangController::class, 'create'])->name('create');
         Route::post('/menu/penerimaan-barang/store', [PenerimaanBarangController::class, 'store'])->name('store');
+
+        Route::get('/menu/penerimaan-barang/{penerimaanBarang}/edit', [PenerimaanBarangController::class, 'edit'])->name('edit');
+        Route::put('/menu/penerimaan-barang/{penerimaanBarang}/update', [PenerimaanBarangController::class, 'update'])->name('update');
+        Route::delete('/menu/penerimaan-barang/{penerimaanBarang}/destroy', [PenerimaanBarangController::class, 'destroy'])->name('destroy');
     });
 
     Route::controller(PengeluaranBarangController::class)->name('pengeluaran.')->group(function () {
         Route::get('/menu/pengeluaran-barang', [PengeluaranBarangController::class, 'index'])->name('index');
         Route::get('/menu/pengeluaran-barang/create', [PengeluaranBarangController::class, 'create'])->name('create');
         Route::post('/menu/pengeluaran-barang/store', [PengeluaranBarangController::class, 'store'])->name('store');
+
+        Route::get('/menu/pengeluaran-barang/{pengeluaranBarang}/edit', [PengeluaranBarangController::class, 'edit'])->name('edit');
+        Route::put('/menu/pengeluaran-barang/{pengeluaranBarang}/update', [PengeluaranBarangController::class, 'update'])->name('update');
+        Route::delete('/menu/pengeluaran-barang/{pengeluaranBarang}/destroy', [PengeluaranBarangController::class, 'destroy'])->name('destroy');
     });
 
     Route::controller(OrderBarangController::class)->name('order.barang.')->group(function () {
@@ -79,6 +87,10 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/menu/order-detail', [OrderDetailController::class, 'index'])->name('index');
         Route::get('/menu/order-detail/create', [OrderDetailController::class, 'create'])->name('create');
         Route::post('/menu/order-detail/store', [OrderDetailController::class, 'store'])->name('store');
+
+        Route::get('/menu/order-detail/{orderDetail}/edit', [OrderDetailController::class, 'edit'])->name('edit');
+        Route::put('/menu/order-detail/{orderDetail}/update', [OrderDetailController::class, 'update'])->name('update');
+        Route::delete('/menu/order-detail/{orderDetail}/destroy', [OrderDetailController::class, 'destroy'])->name('destroy');
     });
 
 });
