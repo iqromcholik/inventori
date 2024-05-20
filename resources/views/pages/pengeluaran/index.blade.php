@@ -20,6 +20,7 @@
                             <th scope="col">Nama Barang</th>
                             <th scope="col">Harga Satuan</th>
                             <th scope="col">Kuantity</th>
+                            <th scope="col">Sisa Stok</th>
                             <th scope="col"></th>
                         </tr>
                     </thead>
@@ -28,6 +29,11 @@
                             <tr>
                                 <td>{{ $pengeluaran->tgl_keluar }}</td>
                                 <td>{{ $pengeluaran->tujuan }}</td>
+                                <td>{{ $pengeluaran->kode_barang }}</td>
+                                <td>{{ $pengeluaran->barang->nama_barang }}</td>
+                                <td>{{ $pengeluaran->barang->harga_satuan }}</td>
+                                <td>{{ $pengeluaran->kuantity }}</td>
+                                <td>{{ $pengeluaran->barang->stok }}</td>
                                 <td>
                                     <div class="d-flex align-items-center">
                                         <a href="" class="btn btn-success btn-sm me-2"><i class="fa fa-edit"></i></a>

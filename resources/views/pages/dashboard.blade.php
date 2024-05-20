@@ -26,7 +26,7 @@
                     <i class="fa-solid fa-boxes-packing fa-3x text-primary"></i>
                     <div class="ms-2">
                         <p class="mb-2">Total Pengeluaran Barang</p>
-                        <h6 class="mb-0">0 Barang</h6>
+                        <h6 class="mb-0">{{ $totalPengeluaranBarang }} Barang</h6>
                     </div>
                 </div>
             </div>

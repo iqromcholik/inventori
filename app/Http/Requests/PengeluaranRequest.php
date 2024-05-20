@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PenerimaanRequest extends FormRequest
+class PengeluaranRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,8 +22,8 @@ class PenerimaanRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'tgl_penyimpanan' => 'required|date',
-            'alamat' => 'required|string|max:255',
+            'tgl_keluar' => 'required|date',
+            'tujuan' => 'required|string|max:150',
             'kode_barang' => 'required|numeric',
             'kuantity' => 'required|numeric',
         ];

@@ -21,9 +21,9 @@ class PenerimaanBarangController extends Controller
         return view('pages.penerimaan.create', compact('kodeBarangs'));
     }
 
-    public function store(PenerimaanBarang $penerimaanBarang, PenerimaanRequest $request)
+    public function store(PenerimaanBarang $penerimaanBarang, PenerimaanRequest $penerimaanRequest)
     {
-        $data = $request->validated();
+        $data = $penerimaanRequest->validated();
 
         // Temukan barang yang sesuai berdasarkan kode barang pada data penerimaan
         $barang = Barang::where('kode_barang', $data['kode_barang'])->first();

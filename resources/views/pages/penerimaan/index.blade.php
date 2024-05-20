@@ -19,7 +19,6 @@
                             <th scope="col">Kode Barang</th>
                             <th scope="col">Nama Barang</th>
                             <th scope="col">Harga Satuan</th>
-                            <th scope="col">Stok</th>
                             <th scope="col">Kuantity</th>
                             <th scope="col"></th>
                         </tr>
@@ -32,7 +31,6 @@
                                 <td>{{ $penerimaan->kode_barang }}</td>
                                 <td>{{ $penerimaan->barang->nama_barang }}</td>
                                 <td>{{ $penerimaan->barang->harga_satuan }}</td>
-                                <td>{{ $penerimaan->barang->stok }}</td>
                                 <td>{{ $penerimaan->kuantity }}</td>
                                 <td>
                                     <div class="d-flex align-items-center">

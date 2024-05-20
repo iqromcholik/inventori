@@ -6,7 +6,7 @@
             <div class="col-sm-12">
                 <div class="bg-light rounded h-100 p-4">
                     <h6 class="mb-4">Tambah Pengeluaran Barang</h6>
-                    <form action="" method="POST">
+                    <form action="{{ route('pengeluaran.store') }}" method="POST">
                         @csrf
                         <div class="mb-3">
                             <label for="tgl_keluar" class="form-label">Tanggal Keluar</label>
