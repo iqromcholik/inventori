@@ -15,6 +15,7 @@ return new class extends Migration
             $table->integer('no_po')->primary();
             $table->date('tanggal');
             $table->foreignId('kode_supplier')->integer();
+            $table->integer('ppn');
             $table->timestamps();
         });
     }

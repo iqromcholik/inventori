@@ -9,16 +9,19 @@ class OrderBarang extends Model
 {
     use HasFactory;
 
+    protected $table = 'order_barangs';
+
     protected $fillable =
     [
+        'no_po',
         'tanggal',
         'kode_supplier',
-        'PPN',
+        'ppn',
     ];
 
     public function supplier()
     {
-        return $this->belongsTo(Supplier::class);
+        return $this->belongsTo(Supplier::class, 'kode_supplier', 'kode_supplier');
     }
 
     public function orderDetail()

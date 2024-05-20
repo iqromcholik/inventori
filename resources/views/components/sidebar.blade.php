@@ -24,8 +24,14 @@
             <a href="/menu/pengeluaran-barang"
                 class="nav-item nav-link {{ Request::is('menu/pengeluaran-barang*') ? 'active' : '' }}"><i
                     class="fa-solid fa-boxes-packing"></i>Pengeluaran</a>
-            <a href="/menu/data-user" class="nav-item nav-link"><i class="fa-solid fa-cart-arrow-down"></i>List
-                Order</a>
+            <a href="/menu/order-barang"
+                class="nav-item nav-link {{ Request::is('menu/order-barang*') ? 'active' : '' }}"><i
+                    class="fa-solid fa-cart-arrow-down"></i>Order
+                Barang</a>
+            <a href="/menu/order-detail"
+                class="nav-item nav-link {{ Request::is('menu/order-detail*') ? 'active' : '' }}"><i
+                    class="fa-solid fa-clipboard-list"></i>Order
+                Detail</a>
         </div>
     </nav>
 </div>

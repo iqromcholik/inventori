@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\OrderBarangController;
 use App\Http\Controllers\PenerimaanBarang;
 use App\Http\Controllers\PenerimaanBarangController;
 use App\Http\Controllers\PengeluaranBarangController;
@@ -48,6 +49,12 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/menu/pengeluaran-barang', [PengeluaranBarangController::class, 'index'])->name('index');
         Route::get('/menu/pengeluaran-barang/create', [PengeluaranBarangController::class, 'create'])->name('create');
         Route::post('/menu/pengeluaran-barang/store', [PengeluaranBarangController::class, 'store'])->name('store');
+    });
+
+    Route::controller(OrderBarangController::class)->name('order.barang.')->group(function () {
+        Route::get('/menu/order-barang', [OrderBarangController::class, 'index'])->name('index');
+        Route::get('/menu/order-barang/create', [OrderBarangController::class, 'create'])->name('create');
+        Route::post('/menu/order-barang/store', [OrderBarangController::class, 'store'])->name('store');
     });
 
 });
