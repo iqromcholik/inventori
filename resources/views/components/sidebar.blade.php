@@ -3,7 +3,8 @@
         <h3 class="navbar-brand mx-4 mb-3 text-primary text-center">INVENTORI - APP</h3>
         <div class="navbar-nav w-100">
             <span class="nav-item mx-4">Dashboard</span>
-            <a href="/menu/data-user" class="nav-item nav-link"><i class="fa-solid fa-home"></i>Dashboard</a>
+            <a href="/home" class="nav-item nav-link {{ Request::is('home*') ? 'active' : '' }}"><i
+                    class="fa-solid fa-home"></i>Dashboard</a>
 
             <span class="nav-item mx-4 mt-3">Menu Pengguna</span>
             <a href="/menu/list-user" class="nav-item nav-link {{ Request::is('menu/list-user*') ? 'active' : '' }}"><i

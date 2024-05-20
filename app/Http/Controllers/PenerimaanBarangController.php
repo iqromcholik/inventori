@@ -11,7 +11,7 @@ class PenerimaanBarangController extends Controller
 {
     public function index()
     {
-        $penerimaans = PenerimaanBarang::all();
+        $penerimaans = PenerimaanBarang::all()->sortByDesc('created_at');
         return view('pages.penerimaan.index', compact('penerimaans'));
     }
 

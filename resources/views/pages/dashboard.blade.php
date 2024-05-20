@@ -8,7 +8,7 @@
                     <i class="fa-solid fa-box fa-3x text-primary"></i>
                     <div class="ms-2">
                         <p class="mb-2">Total Barang</p>
-                        <h6 class="mb-0">0 Barang</h6>
+                        <h6 class="mb-0">{{ $totalBarang }} Barang</h6>
                     </div>
                 </div>
             </div>
@@ -17,7 +17,7 @@
                     <i class="fa-solid fa-truck-ramp-box fa-3x text-primary"></i>
                     <div class="ms-2">
                         <p class="mb-2">Total Penerimaan Barang</p>
-                        <h6 class="mb-0">0 Barang</h6>
+                        <h6 class="mb-0">{{ $totalPenerimaanBarang }} Barang</h6>
                     </div>
                 </div>
             </div>

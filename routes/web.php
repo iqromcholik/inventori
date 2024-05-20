@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PenerimaanBarang;
 use App\Http\Controllers\PenerimaanBarangController;
 use App\Http\Controllers\SupplierController;
@@ -14,8 +15,8 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/home', function () {
-        return view('pages.dashboard');
+    Route::controller(DashboardController::class)->name('dashboard.')->group(function () {
+        Route::get('/home', [DashboardController::class, 'index'])->name('index');
     });
 
     Route::controller(UserController::class)->name('user.')->group(function () {
