@@ -17,7 +17,9 @@
             <a href="/menu/list-barang"
                 class="nav-item nav-link {{ Request::is('menu/list-barang*') ? 'active' : '' }}"><i
                     class="fa-solid fa-box"></i>List Barang</a>
-            <a href="/menu/data-user" class="nav-item nav-link"><i class="fa-solid fa-truck-ramp-box"></i>Penerimaan</a>
+            <a href="/menu/penerimaan-barang"
+                class="nav-item nav-link {{ Request::is('menu/penerimaan-barang*') ? 'active' : '' }}"><i
+                    class="fa-solid fa-truck-ramp-box"></i>Penerimaan</a>
             <a href="/menu/data-user" class="nav-item nav-link"><i class="fa-solid fa-boxes-packing"></i>Pengeluaran</a>
             <a href="/menu/data-user" class="nav-item nav-link"><i class="fa-solid fa-cart-arrow-down"></i>List
                 Order</a>

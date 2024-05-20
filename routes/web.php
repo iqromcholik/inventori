@@ -1,8 +1,11 @@
 <?php
 
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\PenerimaanBarang;
+use App\Http\Controllers\PenerimaanBarangController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\UserController;
+use App\Models\PenerimaanBarang as ModelsPenerimaanBarang;
 use Illuminate\Foundation\Auth\User;
 use Illuminate\Support\Facades\Route;
 
@@ -31,6 +34,12 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/menu/list-barang', [BarangController::class, 'index'])->name('index');
         Route::get('/menu/list-barang/create', [BarangController::class, 'create'])->name('create');
         Route::post('/menu/list-barang/store', [BarangController::class, 'store'])->name('store');
+    });
+
+    Route::controller(PenerimaanBarangController::class)->name('penerimaan.')->group(function () {
+        Route::get('/menu/penerimaan-barang', [PenerimaanBarangController::class, 'index'])->name('index');
+        Route::get('/menu/penerimaan-barang/create', [PenerimaanBarangController::class, 'create'])->name('create');
+        Route::post('/menu/penerimaan-barang/store', [PenerimaanBarangController::class, 'store'])->name('store');
     });
 
 });
