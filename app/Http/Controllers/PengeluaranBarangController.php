@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Barang;
 use App\Models\PengeluaranBarang;
 use Illuminate\Http\Request;
 
@@ -15,6 +16,7 @@ class PengeluaranBarangController extends Controller
 
     public function create()
     {
-        return view('pages.pengeluaran.create');
+        $kodeBarangs = Barang::all();
+        return view('pages.pengeluaran.create', compact('kodeBarangs'));
     }
 }

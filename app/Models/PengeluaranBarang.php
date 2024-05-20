@@ -9,6 +9,8 @@ class PengeluaranBarang extends Model
 {
     use HasFactory;
 
+    protected $table = 'pengeluaran_barangs';
+
     protected $fillable =
     [
         'tgl_keluar',
@@ -19,7 +21,7 @@ class PengeluaranBarang extends Model
 
     public function barang()
     {
-        return $this->belongsTo(Barang::class);
+        return $this->belongsTo(Barang::class, 'kode_barang', 'kode_barang');
     }
 
 }
