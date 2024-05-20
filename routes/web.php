@@ -69,6 +69,10 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/menu/order-barang', [OrderBarangController::class, 'index'])->name('index');
         Route::get('/menu/order-barang/create', [OrderBarangController::class, 'create'])->name('create');
         Route::post('/menu/order-barang/store', [OrderBarangController::class, 'store'])->name('store');
+
+        Route::get('/menu/order-barang/{orderBarang}/edit', [OrderBarangController::class, 'edit'])->name('edit');
+        Route::put('/menu/order-barang/{orderBarang}/update', [OrderBarangController::class, 'update'])->name('update');
+        Route::delete('/menu/order-barang/{orderBarang}/destroy', [OrderBarangController::class, 'destroy'])->name('destroy');
     });
 
     Route::controller(OrderDetailController::class)->name('order.detail.')->group(function () {

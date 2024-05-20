@@ -10,6 +10,7 @@ class OrderBarang extends Model
     use HasFactory;
 
     protected $table = 'order_barangs';
+    protected $primaryKey = 'no_po';
 
     protected $fillable =
     [
