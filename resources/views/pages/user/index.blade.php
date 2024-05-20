@@ -25,7 +25,8 @@
                                 <td>{{ $user->email }}</td>
                                 <td>
                                     <div class="d-flex align-items-center">
-                                        <a href="" class="btn btn-success btn-sm me-2"><i class="fa fa-edit"></i></a>
+                                        <a href="{{ route('user.edit', $user->id) }}" class="btn btn-success btn-sm me-2"><i
+                                                class="fa fa-edit"></i></a>
                                         <form action="" method="POST" class="d-inline">
                                             <input type="hidden" name="_method" value="DELETE" />
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}" />
