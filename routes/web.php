@@ -37,6 +37,9 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/menu/list-supplier', [SupplierController::class, 'index'])->name('index');
         Route::get('/menu/list-supplier/create', [SupplierController::class, 'create'])->name('create');
         Route::post('/menu/list-supplier/store', [SupplierController::class, 'store'])->name('store');
+
+        Route::get('/menu/list-supplier/{supplier}/edit', [SupplierController::class, 'edit'])->name('edit');
+        Route::put('/menu/list-supplier/{supplier}/update', [SupplierController::class, 'update'])->name('update');
     });
 
     Route::controller(BarangController::class)->name('barang.')->group(function () {
