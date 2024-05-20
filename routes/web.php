@@ -43,4 +43,10 @@ Route::middleware(['auth'])->group(function () {
         Route::post('/menu/penerimaan-barang/store', [PenerimaanBarangController::class, 'store'])->name('store');
     });
 
+    Route::controller(PenerimaanBarangController::class)->name('pengeluaran.')->group(function () {
+        Route::get('/menu/penerimaan-barang', [PenerimaanBarangController::class, 'index'])->name('index');
+        Route::get('/menu/penerimaan-barang/create', [PenerimaanBarangController::class, 'create'])->name('create');
+        Route::post('/menu/penerimaan-barang/store', [PenerimaanBarangController::class, 'store'])->name('store');
+    });
+
 });
