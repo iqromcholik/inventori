@@ -30,6 +30,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/menu/list-user/edit/{user}', [UserController::class, 'edit'])->name('edit');
         Route::put('/menu/list-user/{user}/update', [UserController::class, 'update'])->name('update');
         Route::put('/menu/list-user/{user}/update-password', [UserController::class, 'updatePassword'])->name('updatePassword');
+        Route::delete('/menu/list-user/{user}/destroy', [UserController::class, 'destroy'])->name('destroy');
     });
 
     Route::controller(SupplierController::class)->name('supplier.')->group(function () {
