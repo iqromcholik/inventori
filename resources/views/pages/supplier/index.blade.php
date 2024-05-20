@@ -32,7 +32,8 @@
                                     <div class="d-flex align-items-center">
                                         <a href="{{ route('supplier.edit', $supplier->kode_supplier) }}"
                                             class="btn btn-success btn-sm me-2"><i class="fa fa-edit"></i></a>
-                                        <form action="" method="POST" class="d-inline">
+                                        <form action="{{ route('supplier.destroy', $supplier->kode_supplier) }}"
+                                            method="POST" class="d-inline">
                                             <input type="hidden" name="_method" value="DELETE" />
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                                             <button class="btn btn-danger btn-sm" type="submit"><i

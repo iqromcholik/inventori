@@ -40,12 +40,17 @@ Route::middleware(['auth'])->group(function () {
 
         Route::get('/menu/list-supplier/{supplier}/edit', [SupplierController::class, 'edit'])->name('edit');
         Route::put('/menu/list-supplier/{supplier}/update', [SupplierController::class, 'update'])->name('update');
+        Route::delete('/menu/list-supplier/{supplier}/destroy', [SupplierController::class, 'destroy'])->name('destroy');
     });
 
     Route::controller(BarangController::class)->name('barang.')->group(function () {
         Route::get('/menu/list-barang', [BarangController::class, 'index'])->name('index');
         Route::get('/menu/list-barang/create', [BarangController::class, 'create'])->name('create');
         Route::post('/menu/list-barang/store', [BarangController::class, 'store'])->name('store');
+
+        Route::get('/menu/list-barang/{barang}/edit', [BarangController::class, 'edit'])->name('edit');
+        Route::put('/menu/list-barang/{barang}/update', [BarangController::class, 'update'])->name('update');
+        Route::delete('/menu/list-barang/{barang}/destroy', [BarangController::class, 'destroy'])->name('destroy');
     });
 
     Route::controller(PenerimaanBarangController::class)->name('penerimaan.')->group(function () {

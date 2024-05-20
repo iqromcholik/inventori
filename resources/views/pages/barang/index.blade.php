@@ -38,8 +38,10 @@
                                 <td>{{ $barang->stok }}</td>
                                 <td>
                                     <div class="d-flex align-items-center">
-                                        <a href="" class="btn btn-success btn-sm me-2"><i class="fa fa-edit"></i></a>
-                                        <form action="" method="POST" class="d-inline">
+                                        <a href="{{ route('barang.edit', $barang->kode_barang) }}"
+                                            class="btn btn-success btn-sm me-2"><i class="fa fa-edit"></i></a>
+                                        <form action="{{ route('barang.destroy', $barang->kode_barang) }}" method="POST"
+                                            class="d-inline">
                                             <input type="hidden" name="_method" value="DELETE" />
                                             <input type="hidden" name="_token" value="{{ csrf_token() }}" />
                                             <button class="btn btn-danger btn-sm" type="submit"><i
