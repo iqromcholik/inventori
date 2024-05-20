@@ -9,6 +9,9 @@ class OrderDetail extends Model
 {
     use HasFactory;
 
+    protected $table = 'order_details';
+    protected $primaryKey = 'no_po';
+
     protected $fillable =
     [
         'no_po',
@@ -21,7 +24,7 @@ class OrderDetail extends Model
 
     public function orderBarang()
     {
-        return $this->hasMany(OrderBarang::class);
+        return $this->belongsTo(OrderBarang::class, 'no_po', 'no_po');
     }
 
 }

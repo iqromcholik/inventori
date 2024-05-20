@@ -26,7 +26,7 @@ class OrderBarang extends Model
 
     public function orderDetail()
     {
-        return $this->belongsTo(OrderDetail::class);
+        return $this->hasMany(OrderDetail::class, 'no_po', 'no_po');
     }
 
 }

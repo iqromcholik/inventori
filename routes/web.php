@@ -3,6 +3,7 @@
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\OrderBarangController;
+use App\Http\Controllers\OrderDetailController;
 use App\Http\Controllers\PenerimaanBarang;
 use App\Http\Controllers\PenerimaanBarangController;
 use App\Http\Controllers\PengeluaranBarangController;
@@ -55,6 +56,12 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/menu/order-barang', [OrderBarangController::class, 'index'])->name('index');
         Route::get('/menu/order-barang/create', [OrderBarangController::class, 'create'])->name('create');
         Route::post('/menu/order-barang/store', [OrderBarangController::class, 'store'])->name('store');
+    });
+
+    Route::controller(OrderDetailController::class)->name('order.detail.')->group(function () {
+        Route::get('/menu/order-detail', [OrderDetailController::class, 'index'])->name('index');
+        Route::get('/menu/order-detail/create', [OrderDetailController::class, 'create'])->name('create');
+        Route::post('/menu/order-detail/store', [OrderDetailController::class, 'store'])->name('store');
     });
 
 });
